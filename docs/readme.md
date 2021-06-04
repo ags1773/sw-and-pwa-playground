@@ -6,3 +6,4 @@
 
 - [Basics](basics.md)
 - [Service worker events](sw-events.md)
+- [Resources](resources.md)
