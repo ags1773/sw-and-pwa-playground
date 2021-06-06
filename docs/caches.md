@@ -1,3 +1,5 @@
+[< Back](readme.md)
+
 On the 2nd and subsequent loads, our app should
 
 1. ensure the users get the latest content
@@ -11,9 +13,10 @@ On the 2nd and subsequent loads, our app should
   Example: users might have css files from a previous release (since it was modified and the browser has cached it) and JS files from the latest release if the , breaking the whole UI
 
 ### HTTP caching
+
 - the modern **default** is actually have no caching in the browser and use a CDN that's geographically close to the users
-- `Cache-Control: max-age=0,must-revalidate,public` or specify `no-cache`. This basically means the the cached resources must be re-validated from the network every time before using (*NOTE: re-validated isn't the same as requested again!*). Re-validation is cheap, modern browsers use [etag](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag)
-- for some requests, the asset's *fingerprint* (hash) can be included in the file name and the cache time set to infinity `Cache-Control: max-age=31536000,immutable`. When the file's contents change, the hash changes thus invalidating the cached resource
+- `Cache-Control: max-age=0,must-revalidate,public` or specify `no-cache`. This basically means the the cached resources must be re-validated from the network every time before using (_NOTE: re-validated isn't the same as requested again!_). Re-validation is cheap, modern browsers use [etag](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag)
+- for some requests, the asset's _fingerprint_ (hash) can be included in the file name and the cache time set to infinity `Cache-Control: max-age=31536000,immutable`. When the file's contents change, the hash changes thus invalidating the cached resource
 - the disadvantage of using hashes in file names is that you can't rename the main index.html to index.xf349.html, since users will have to enter this to hit say your homepage. Bad UX! So use a middleground like cache for an hour
 - This middleground of caching for say an hr can be applied to things like hero images (user will visit a news story just a couple of times at max), non-critical JSON data that's updated hourly, rate limited API responses
 

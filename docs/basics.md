@@ -1,3 +1,5 @@
+[< Back](readme.md)
+
 ### Setup
 
 - the browser needs to `register` the SW if it supports it. Do this on the window's `load` event

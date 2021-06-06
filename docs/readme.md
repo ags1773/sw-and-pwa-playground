@@ -6,5 +6,5 @@
 
 - [Basics](basics.md)
 - [Service worker events](sw-events.md)
-- [Cache storage api](caches.md)
+- [Caching](caches.md)
 - [Resources](resources.md)
