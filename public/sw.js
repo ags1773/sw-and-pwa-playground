@@ -1,3 +1,7 @@
+/**
+ * "caches", "cache.addAll" etc. are all parts of the cache storage API https://web.dev/cache-api-quick-guide/
+ */
+
 const cacheName = "cache-v1";
 const resourcesToPreCache = [
   "/",
